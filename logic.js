@@ -68,16 +68,16 @@ const choiceScissors = scissors.addEventListener('click', function () {
     game('scissors');
 });
 
-function gameover(userScore, computerScore) {
+/*function gameover(userScore, computerScore) {
     if (userScore === 5) {
-        console.log('game over');
+        alert('Game Over! You Win!!')
     } else if (computerScore === 5) {
-        console.log('game over, you lose');
+        alert('Game Over! You Lose!!')
     } else {
 
     }
 }
-
+*/
 
 
 
