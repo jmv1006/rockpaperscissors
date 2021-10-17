@@ -20,12 +20,14 @@ function userWins() {
     userScore++;
     document.getElementById('gameresult').innerHTML = 'You Win!';
     document.getElementById('userscore').innerHTML = userScore;
+    gameover(userScore);
 }
 
 function userLoses() {
     computerScore++;
     document.getElementById('gameresult').innerHTML = 'You Lose!';
     document.getElementById('computerscore').innerHTML = computerScore;
+    gameover(computerScore);
 }
 
 function draw() {
@@ -66,6 +68,15 @@ const choiceScissors = scissors.addEventListener('click', function () {
     game('scissors');
 });
 
+function gameover(userScore, computerScore) {
+    if (userScore === 5) {
+        console.log('game over');
+    } else if (computerScore === 5) {
+        console.log('game over, you lose');
+    } else {
+
+    }
+}
 
 
 
