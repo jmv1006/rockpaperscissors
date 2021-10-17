@@ -1,3 +1,5 @@
+const userScoreDisplay = document.getElementById('userscore');
+const computerScoreDisplay = document.getElementById('computerscore');
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
@@ -13,18 +15,43 @@ function getComputerChoice() {
 }
 
 
-function game(userChoice) {
-    const computerChoice = getComputerChoice();
-    if (userChoice == computerChoice) {
-        console.log('It is a draw');
-    } else if (userChoice == 'rock' && computerChoice == 'scissors') {
-        console.log('I win!!')
-    } else if (userChoice == 'scissors' && computerChoice == 'rock') {
-        console.log('I lose!')
-    }
+
+function userWins() {
+    userScore++;
+    document.getElementById('gameresult').innerHTML = 'You Win!';
+    document.getElementById('userscore').innerHTML = userScore;
 }
 
+function userLoses() {
+    computerScore++;
+    document.getElementById('gameresult').innerHTML = 'You Lose!';
+    document.getElementById('computerscore').innerHTML = computerScore;
+}
 
+function draw() {
+    document.getElementById('gameresult').innerHTML = "It's a draw!";
+}
+
+function game(userChoice) {
+    const computerChoice = getComputerChoice();
+    switch (userChoice + computerChoice) {
+        case ('rockscissors'):
+        case ('paperrock'):
+        case ('scissorspaper'):
+            userWins();
+            break;
+        case ('rockpaper'):
+        case ('paperscissors'):
+        case ('scissorsrock'):
+            userLoses();
+            break;
+        case ('rockrock'):
+        case ('paperpaper'):
+        case ('scissorsscissors'):
+            draw();
+            break;
+    }
+}
 
 
 const choiceRock = rock.addEventListener('click', function () {
@@ -32,7 +59,7 @@ const choiceRock = rock.addEventListener('click', function () {
 });
 
 const choicePaper = paper.addEventListener('click', function () {
-    console.log('You clicked paper');
+    game('paper');
 });
 
 const choiceScissors = scissors.addEventListener('click', function () {
@@ -40,22 +67,6 @@ const choiceScissors = scissors.addEventListener('click', function () {
 });
 
 
-
-
-
-function userWins() {
-    userScore++;
-    //change display
-}
-
-function userLoses() {
-    computerScore++;
-    //change display
-}
-
-function draw() {
-    console.log('its a draw!')
-}
 
 
 
