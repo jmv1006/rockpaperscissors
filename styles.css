@@ -28,6 +28,17 @@ header > h1 {
     text-align: center;
 }
 
+
+
+
+.interface {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .choices {
     display: flex;
     flex-direction: row;
@@ -45,9 +56,9 @@ header > h1 {
     padding: 50px;
 }
 
-.response {
+#gameresult {
     display: flex;
-    padding: 35px;
+    padding: 0px;
     font-size: 55px;
 }
 
